@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace VendorTracker.Models
 {
   public class Order
@@ -9,7 +11,6 @@ namespace VendorTracker.Models
     {
       Title = title;
       _instances.Add(this);
-      Id = _instances.Count;
     }
   }
 }
