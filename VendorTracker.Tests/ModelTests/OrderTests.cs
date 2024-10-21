@@ -6,8 +6,13 @@ using VendorTracker.Models;
 namespace VendorTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -89,6 +94,18 @@ namespace VendorTracker.Tests
       newOrder.Date = newDate;
       string result = newOrder.Date;
       Assert.AreEqual(newDate, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllOrders_OrderList()
+    {
+      Order newOrder1 = new Order("title 1", "description 1", "price 1", "date 1");
+      Order newOrder2 = new Order("title 2", "description 2", "price 2", "date 2");
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      List<Order> allOrders = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, allOrders);
     }
   }
 }
