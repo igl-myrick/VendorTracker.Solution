@@ -11,7 +11,7 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title", "description");
+      Order newOrder = new Order("title", "description", "price");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -19,7 +19,7 @@ namespace VendorTracker.Tests
     public void GetTitle_ReturnsTitle_String()
     {
       string title = "title";
-      Order newOrder = new Order(title, "description");
+      Order newOrder = new Order(title, "description", "price");
       Assert.AreEqual(title, newOrder.Title);
     }
 
@@ -27,7 +27,7 @@ namespace VendorTracker.Tests
     public void SetTitle_UpdatesTitle_String()
     {
       string title = "title";
-      Order newOrder = new Order(title, "description");
+      Order newOrder = new Order(title, "description", "price");
       string newTitle = "new title";
       newOrder.Title = newTitle;
       string result = newOrder.Title;
@@ -38,7 +38,7 @@ namespace VendorTracker.Tests
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "description";
-      Order newOrder = new Order("title", description);
+      Order newOrder = new Order("title", description, "price");
       Assert.AreEqual(description, newOrder.Description);
     }
 
@@ -46,11 +46,19 @@ namespace VendorTracker.Tests
     public void SetDescription_UpdatesDescription_String()
     {
       string description = "description";
-      Order newOrder = new Order("title", description);
+      Order newOrder = new Order("title", description, "price");
       string newDescription = "new description";
       newOrder.Description = newDescription;
       string result = newOrder.Description;
       Assert.AreEqual(newDescription, result);
+    }
+
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_String()
+    {
+      string price = "price";
+      Order newOrder = new Order("title", "description", price);
+      Assert.AreEqual(price, newOrder.Price);
     }
   }
 }
