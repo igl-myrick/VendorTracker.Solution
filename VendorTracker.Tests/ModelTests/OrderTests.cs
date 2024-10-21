@@ -11,7 +11,7 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("title", "description", "price");
+      Order newOrder = new Order("title", "description", "price", "date");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -19,7 +19,7 @@ namespace VendorTracker.Tests
     public void GetTitle_ReturnsTitle_String()
     {
       string title = "title";
-      Order newOrder = new Order(title, "description", "price");
+      Order newOrder = new Order(title, "description", "price", "date");
       Assert.AreEqual(title, newOrder.Title);
     }
 
@@ -27,7 +27,7 @@ namespace VendorTracker.Tests
     public void SetTitle_UpdatesTitle_String()
     {
       string title = "title";
-      Order newOrder = new Order(title, "description", "price");
+      Order newOrder = new Order(title, "description", "price", "date");
       string newTitle = "new title";
       newOrder.Title = newTitle;
       string result = newOrder.Title;
@@ -38,7 +38,7 @@ namespace VendorTracker.Tests
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "description";
-      Order newOrder = new Order("title", description, "price");
+      Order newOrder = new Order("title", description, "price", "date");
       Assert.AreEqual(description, newOrder.Description);
     }
 
@@ -46,7 +46,7 @@ namespace VendorTracker.Tests
     public void SetDescription_UpdatesDescription_String()
     {
       string description = "description";
-      Order newOrder = new Order("title", description, "price");
+      Order newOrder = new Order("title", description, "price", "date");
       string newDescription = "new description";
       newOrder.Description = newDescription;
       string result = newOrder.Description;
@@ -57,7 +57,7 @@ namespace VendorTracker.Tests
     public void GetPrice_ReturnsPrice_String()
     {
       string price = "price";
-      Order newOrder = new Order("title", "description", price);
+      Order newOrder = new Order("title", "description", price, "date");
       Assert.AreEqual(price, newOrder.Price);
     }
 
@@ -65,11 +65,19 @@ namespace VendorTracker.Tests
     public void SetPrice_UpdatesPrice_String()
     {
       string price = "price";
-      Order newOrder = new Order("title", "description", price);
+      Order newOrder = new Order("title", "description", price, "date");
       string newPrice = "new price";
       newOrder.Price = newPrice;
       string result = newOrder.Price;
       Assert.AreEqual(newPrice, result);
+    }
+
+    [TestMethod]
+    public void GetDate_ReturnsDate_String()
+    {
+      string date = "date";
+      Order newOrder = new Order("title", "description", "price", date);
+      Assert.AreEqual(date, newOrder.Date);
     }
   }
 }
