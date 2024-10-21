@@ -60,5 +60,16 @@ namespace VendorTracker.Tests
       Order newOrder = new Order("title", "description", price);
       Assert.AreEqual(price, newOrder.Price);
     }
+
+    [TestMethod]
+    public void SetPrice_UpdatesPrice_String()
+    {
+      string price = "price";
+      Order newOrder = new Order("title", "description", price);
+      string newPrice = "new price";
+      newOrder.Price = newPrice;
+      string result = newOrder.Price;
+      Assert.AreEqual(newPrice, result);
+    }
   }
 }
