@@ -25,7 +25,8 @@ namespace VendorTracker.Tests
     {
       string title = "title";
       Order newOrder = new Order(title, "description", "price", "date");
-      Assert.AreEqual(title, newOrder.Title);
+      string result = newOrder.Title;
+      Assert.AreEqual(title, result);
     }
 
     [TestMethod]
@@ -44,7 +45,8 @@ namespace VendorTracker.Tests
     {
       string description = "description";
       Order newOrder = new Order("title", description, "price", "date");
-      Assert.AreEqual(description, newOrder.Description);
+      string result = newOrder.Description;
+      Assert.AreEqual(description, result);
     }
 
     [TestMethod]
@@ -63,7 +65,8 @@ namespace VendorTracker.Tests
     {
       string price = "price";
       Order newOrder = new Order("title", "description", price, "date");
-      Assert.AreEqual(price, newOrder.Price);
+      string result = newOrder.Price;
+      Assert.AreEqual(price, result);
     }
 
     [TestMethod]
@@ -82,7 +85,8 @@ namespace VendorTracker.Tests
     {
       string date = "date";
       Order newOrder = new Order("title", "description", "price", date);
-      Assert.AreEqual(date, newOrder.Date);
+      string result = newOrder.Date;
+      Assert.AreEqual(date, result);
     }
 
     [TestMethod]
