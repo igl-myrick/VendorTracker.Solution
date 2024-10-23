@@ -6,12 +6,10 @@ namespace VendorTracker.Controllers
   {
 
     [HttpGet("/")]
+    public ActionResult Index()
     {
-      public ActionResult Index()
-      {
-        return View();
-      }
+      return View();
     }
-    
+
   }
 }
